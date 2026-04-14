@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Varnit Khandelwal, a passionate Web Developer from Jaipur, India.">
+    <title>Varnit Khandelwal | Web Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&family=Space+Mono&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Overlay & Backdrops -->
+    <div class="grain-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-ring"></div>
+        <div class="preloader-text">VK</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">
+            <svg width="36" height="36" viewBox="0 0 100 100" class="logo-svg">
+                <defs>
+                    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--cyan)" />
+                        <stop offset="100%" stop-color="var(--violet)" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logo-grad)" stroke-width="6" stroke-dasharray="60 40 20 40" class="logo-ring" />
+                <path d="M 35 35 L 50 60 L 65 35" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="50" cy="50" r="6" fill="var(--cyan)" class="logo-dot" />
+            </svg>
+            <span class="logo-text">Varnit<span>.</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                <div class="status-badge gs-float">
+                    <div class="status-dot"></div>
+                    Currently available for work
+                </div>
+                <div class="greeting">&lt;Hello World /&gt;</div>
+                <h1 class="hero-name"></h1> <!-- TextPlugin will type here -->
+                <h2 class="hero-role">Web Developer</h2>
+                <p class="hero-sub">Building digital experiences from Jaipur, India 🚀. Blending design code with an anti-gravity touch.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary cta-btn">View Projects</a>
+                    <a href="assets/Varnit_Khandelwal_Resume.pdf" download="Varnit_Khandelwal_Resume.pdf" class="btn btn-secondary cta-btn">Download CV</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="abstract-shape">
+                    <div class="shape-ring shape-ring-1"></div>
+                    <div class="shape-ring shape-ring-2"></div>
+                    <div class="shape-ring shape-ring-3"></div>
+                    <div class="shape-core"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <h2 class="section-title">About <span class="text-violet">Me</span></h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image-wrapper gs-float">
+                    <div class="image-border"></div>
+                    <!-- Professional Developer Silhouette Background -->
+                    <img src="assets/image.png" alt="Varnit Khandelwal" class="about-image">
+                </div>
+                
+                <div class="about-content">
+                    <p style="color: var(--text-muted); font-size: 1.25rem; line-height: 1.8; margin-bottom: 35px;">
+                        I am a passionate Web Developer currently pursuing a B.Tech in CSE with a specialization in AI & Data Science at JECRC University (2024-2028). I specialize in creating modern, interactive, and visually stunning web applications.
+                    </p>
+                    
+                    <div class="about-tabs">
+                        <button class="tab-btn active" onclick="switchTab(event, 'skills')">Skills</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'education')">Education</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'experience')">Experience</button>
+                    </div>
+                    
+                    <div id="tab-skills" class="tab-content active">
+                        <div class="skills-container">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Tailwind</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">GSAP</span>
+                        </div>
+                    </div>
+                    
+                    <div id="tab-education" class="tab-content">
+                        <div class="timeline-item">
+                            <h4>B.Tech CSE (AI & Data Science)</h4>
+                            <p>JECRC University, Jaipur | 2024 - 2028</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>High School</h4>
+                            <p>Completed with excellence in Science stream.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="tab-experience" class="tab-content">
+                        <div class="timeline-item">
+                            <h4>Freelance Web Developer</h4>
+                            <p>Self-employed | 2023 - Present</p>
+                            <p style="margin-top:5px; font-size: 0.85rem">Building custom websites and web applications for clients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2 class="section-title">My <span class="text-cyan">Services</span></h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card gs-scroll-up">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, performant, and scaleable frontend & backend web solutions customized to your needs.</p>
+                </div>
+                <div class="service-card gs-scroll-up" style="transition-delay: 0.1s;">
+                    <div class="service-icon">☕</div>
+                    <h3>Java Development</h3>
+                    <p>Creating robust Object-Oriented applications and scalable backend systems using Java technologies.</p>
+                </div>
+                <div class="service-card gs-scroll-up" style="transition-delay: 0.2s;">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing clean, intuitive interfaces focusing on user experience, modern aesthetics, and fluid interactions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="container">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <h2 class="section-title achievements-title">My <span class="text-violet">Achievements</span></h2>
+            </div>
+            
+            <div class="achievements-grid">
+                <!-- Card 1 -->
+                <div class="achievement-card card-gold">
+                    <div class="ach-num">01</div>
+                    <div class="ach-bg-orbs">
+                        <div class="ach-orb orb-gold orb-g1"></div>
+                        <div class="ach-orb orb-gold orb-g2"></div>
+                        <div class="ach-orb orb-gold orb-g3"></div>
+                    </div>
+                    <div class="ach-content-wrapper">
+                        <div class="ach-left">
+                            <div class="ach-icon-wrapper">
+                                <div class="floating-icon">🏆</div>
+                            </div>
+                            <h3>Top 5 Team — Healthcare Hackathon</h3>
+                            <p class="ach-subtitle">36-Hour Hackathon at JECRC University &middot; 1st & 2nd April 2025</p>
+                        </div>
+                        <div class="ach-divider"></div>
+                        <div class="ach-right">
+                            <p class="ach-desc">Competed among top teams in a 36-hour intensive healthcare hackathon hosted at JECRC University. Our team secured a position in the Top 5, designing and building an innovative healthcare solution under extreme time pressure. Demonstrated skills in rapid prototyping, teamwork, problem-solving, and full-stack development.</p>
+                            <div class="ach-tags">
+                                <span class="ach-tag tag-gold ach-tag-anim">Healthcare</span>
+                                <span class="ach-tag tag-gold ach-tag-anim">Hackathon</span>
+                                <span class="ach-tag tag-gold ach-tag-anim">Top 5</span>
+                                <span class="ach-tag tag-gold ach-tag-anim">National Level</span>
+                                <span class="ach-tag tag-gold ach-tag-anim">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="achievement-card card-cyan">
+                    <div class="ach-num">02</div>
+                    <div class="ach-bg-orbs">
+                        <div class="ach-orb orb-cyan orb-c1"></div>
+                        <div class="ach-orb orb-cyan orb-c2"></div>
+                        <div class="ach-orb orb-cyan orb-c3"></div>
+                    </div>
+                    <div class="ach-content-wrapper">
+                        <div class="ach-left">
+                            <div class="ach-icon-wrapper">
+                                <div class="floating-icon">🎯</div>
+                            </div>
+                            <h3>Core Team Member — JU Orientation 2025</h3>
+                            <p class="ach-subtitle">JECRC University &middot; Jaipur</p>
+                        </div>
+                        <div class="ach-divider"></div>
+                        <div class="ach-right">
+                            <p class="ach-desc">Served as a Core Team Member for the JU Orientation 2025 event at JECRC University. Played a key role in planning, organizing, and executing the orientation program for new students. Managed event coordination, logistics, and inter-department communication, contributing to a seamless experience for hundreds of incoming students.</p>
+                            <div class="ach-tags">
+                                <span class="ach-tag tag-cyan ach-tag-anim">Leadership</span>
+                                <span class="ach-tag tag-cyan ach-tag-anim">Event Management</span>
+                                <span class="ach-tag tag-cyan ach-tag-anim">Teamwork</span>
+                                <span class="ach-tag tag-cyan ach-tag-anim">JECRC</span>
+                                <span class="ach-tag tag-cyan ach-tag-anim">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container" style="margin-top: 80px;">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <h2 class="section-title">Featured <span class="text-violet">Projects</span></h2>
+            </div>
+            
+            <div id="gsap-featured-wrapper">
+                <div class="projects-grid gsap-featured-grid">
+                <!-- NEW HIGHLIGHTED PROJECT -->
+                <div class="project-card gs-scroll-up" style="border: 1px solid var(--violet); box-shadow: 0 0 20px rgba(123, 47, 255, 0.2); position: relative; overflow: visible;">
+                    <div style="position: absolute; top: -12px; right: 20px; background: linear-gradient(90deg, var(--cyan), var(--violet)); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-family: var(--font-mono); font-weight: bold; z-index: 10; box-shadow: 0 5px 15px rgba(123, 47, 255, 0.4); animation: pulse-core 2s ease-in-out infinite alternate;">LATEST RELEASE 🔥</div>
+                    <div class="project-img-container" style="border-radius: 14px 14px 0 0; overflow: hidden;">
+                        <img src="assets/ai_content_moderation_1775912749408.png" alt="Content Moderation AI" class="project-img">
+                    </div>
+                    <div class="project-info" style="background: rgba(123, 47, 255, 0.03); border-radius: 0 0 14px 14px;">
+                        <h3 style="color: var(--cyan); text-shadow: 0 0 10px rgba(0, 245, 255, 0.3);">AI Content Moderation Env</h3>
+                        <p>An advanced Meta OpenEnv compatible AI platform utilizing LLMs for automated content moderation, structured reasoning outputs, and real-time inference routing.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag" style="border: 1px solid rgba(0, 245, 255, 0.2)">Python</span>
+                            <span class="gs-tag" style="border: 1px solid rgba(0, 245, 255, 0.2)">AI/ML</span>
+                            <span class="gs-tag" style="border: 1px solid rgba(0, 245, 255, 0.2)">Flask</span>
+                            <span class="gs-tag" style="border: 1px solid rgba(0, 245, 255, 0.2)">Hugging Face</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/content-moderation-env" target="_blank" style="background: var(--violet); color: white; border-color: var(--violet);">GitHub</a> &bull; <a href="https://huggingface.co/spaces/VARNIT09/content-moderation-env" target="_blank" style="background: var(--cyan); color: var(--bg-color); border-color: var(--cyan);">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/portfolio_website_1775912769542.png" alt="Personal Portfolio" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Personal Portfolio</h3>
+                        <p>An anti-gravity themed portfolio website focusing on immersive design, dynamic interactions, and GSAP animations.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">HTML</span><span class="gs-tag">CSS</span><span class="gs-tag">JS</span><span class="gs-tag">GSAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/MyPortfolio" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/currency_converter_1775912784915.png" alt="Currency Converter" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Currency Converter</h3>
+                        <p>Real-time foreign exchange rates converter utilizing a RESTful API and asynchronous JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JS</span><span class="gs-tag">API</span><span class="gs-tag">Async/Await</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/Currency_Convertor" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/number_guessing_1775912806608.png" alt="Number Guessing Game" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Number Guessing Game</h3>
+                        <p>An interactive browser game testing logic and luck, featuring dynamic feedback and score tracking.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JavaScript</span><span class="gs-tag">Game Logic</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/Number_Guessing_game" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/triage_frontend_1775912824210.png" alt="Healthcare Triage Frontend" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Emergency Triage System (Frontend)</h3>
+                        <p>A frontend interface for an emergency department triage system, designed for clinical settings without the backend integration.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">HTML</span><span class="gs-tag">CSS</span><span class="gs-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/AI-Based-Emergency-Department-Triage-System" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/triage_fullstack_1775912855792.png" alt="Healthcare Triage Fullstack" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Emergency Triage System (Fullstack)</h3>
+                        <p>A fullstack triage application integrating machine learning models for patient routing and a Google Sheets backend database.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">Python</span><span class="gs-tag">ML</span><span class="gs-tag">Backend</span><span class="gs-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/AI-TRIAGE-SYSTEM-" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Small Course Projects Section -->
+            <div class="section-header" style="margin-top: 100px; display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    <h2 class="section-title">Small Course <span class="text-cyan">Projects</span></h2>
+                </div>
+            </div>
+            
+            <div class="projects-grid single-line">
+                <!-- Project 2 (Moved To-Do List) -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/todo_list_1775912872329.png" alt="To-Do List App" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>To-Do List App</h3>
+                        <p>A sophisticated task management application utilizing LocalStorage for data persistence and intuitive UI.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JavaScript</span><span class="gs-tag">HTML/CSS</span><span class="gs-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/Todo_list" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Forecast -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/weather_forecast_1775912887791.png" alt="Weather Forecast" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Forecast App</h3>
+                        <p>A responsive weather companion fetching real-time climate data via open APIs with dynamic UI updates.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JavaScript</span><span class="gs-tag">API</span><span class="gs-tag">CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/weather-forcaste" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/ecommerce_store_1775912905054.png" alt="E-Commerce" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Interface</h3>
+                        <p>A clean, functional storefront UI layout emphasizing product presentation and cart interactivity basics.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">HTML</span><span class="gs-tag">CSS</span><span class="gs-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/e-commerce" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense Tracker -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/expense_tracker_1775912922706.png" alt="Expense Tracker" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Expense Tracker</h3>
+                        <p>A personal finance tool to log and categorize daily spending, featuring local state management logic.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JavaScript</span><span class="gs-tag">DOM Manipulation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/expense-tracker" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Quiz -->
+                <div class="project-card gs-scroll-up">
+                    <div class="project-img-container">
+                        <img src="assets/quiz_app_1775912939962.png" alt="Small Quiz" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Small Quiz Application</h3>
+                        <p>An interactive trivia challenge exploring structured data handling and complex state conditional rendering.</p>
+                        <div class="project-tags">
+                            <span class="gs-tag">JavaScript</span><span class="gs-tag">Logic</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/varnitkhandelwal2-star/small-quiz" target="_blank">GitHub</a> &bull; <a href="javascript:void(0)" title="Coming Soon">Live Preview</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+             <div class="section-header">
+                <span class="section-num">05</span>
+                <h2 class="section-title">Get in <span class="text-cyan">Touch</span></h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                    
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <a href="mailto:varnitkhandelwal2@gmail.com">varnitkhandelwal2@gmail.com</a>
+                    </div>
+                    <div class="contact-detail">
+                        <h4>Location</h4>
+                        <span class="mono">Jaipur, India</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/varnitkhandelwal2-star" target="_blank" class="gs-float" style="animation-delay: 0s;">GH</a>
+                        <a href="https://www.linkedin.com/in/varnit-khandelwal-b47190322/" target="_blank" class="gs-float" style="animation-delay: 0.2s;">IN</a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form" onsubmit="sendEmail(event);">
+                    <div class="form-group">
+                        <input type="text" id="user_name" name="user_name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="user_email" name="user_email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="send-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Varnit Khandelwal &middot; Made with ❤️ in Jaipur</p>
+    </footer>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // !! WARNING: EmailJS will not work until you replace YOUR_PUBLIC_KEY below
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
