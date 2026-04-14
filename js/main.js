@@ -187,6 +187,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
         });
 
         function animateCanvas() {
+            if (width < 768) return; // completely disable canvas on mobile
             ctx.clearRect(0, 0, width, height);
             
             for (let i = 0; i < particles.length; i++) {

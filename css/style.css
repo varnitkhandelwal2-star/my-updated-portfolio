@@ -1011,4 +1011,9 @@
             /* Mobile Performance Optimizations */
             .grain-overlay { display: none !important; }
             .orb { filter: none !important; opacity: 0.1 !important; }
+            .service-card, .contact-form, nav.scrolled, .btn-secondary, .project-card {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(10, 10, 20, 0.95) !important;
+            }
         }
