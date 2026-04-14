@@ -158,7 +158,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
-        const MAX_PARTICLES = 120;
+        let MAX_PARTICLES = 120;
         const CONNECTION_DISTANCE = 120;
         const MOUSE_REPULSION = 120;
         const REPULSION_FORCE = 0.5;
@@ -166,6 +166,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
         function initCanvas() {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
+            MAX_PARTICLES = width < 768 ? 40 : 120;
             particles = [];
             for (let i = 0; i < MAX_PARTICLES; i++) {
                 particles.push({
@@ -234,27 +235,29 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
                 ctx.fill();
 
                 // Draw connections
-                for (let j = i + 1; j < particles.length; j++) {
-                    let p2 = particles[j];
-                    let dcdx = p.x - p2.x;
-                    
-                    // Quick efficiency check before expensive math
-                    if (Math.abs(dcdx) > CONNECTION_DISTANCE) continue;
-                    
-                    let dcdy = p.y - p2.y;
-                    if (Math.abs(dcdy) > CONNECTION_DISTANCE) continue;
-                    
-                    let cDist = Math.sqrt(dcdx * dcdx + dcdy * dcdy);
+                if (width >= 768) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dcdx = p.x - p2.x;
+                        
+                        // Quick efficiency check before expensive math
+                        if (Math.abs(dcdx) > CONNECTION_DISTANCE) continue;
+                        
+                        let dcdy = p.y - p2.y;
+                        if (Math.abs(dcdy) > CONNECTION_DISTANCE) continue;
+                        
+                        let cDist = Math.sqrt(dcdx * dcdx + dcdy * dcdy);
 
-                    if (cDist < CONNECTION_DISTANCE) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = '#ffffff';
-                        // Opacity based on distance
-                        ctx.globalAlpha = 0.15 * (1 - cDist / CONNECTION_DISTANCE);
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
+                        if (cDist < CONNECTION_DISTANCE) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = '#ffffff';
+                            // Opacity based on distance
+                            ctx.globalAlpha = 0.15 * (1 - cDist / CONNECTION_DISTANCE);
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
                     }
                 }
             }

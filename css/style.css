@@ -1007,4 +1007,8 @@
             
             .cursor-dot, .cursor-ring { display: none; } /* Hide custom cursor on mobile */
             * { cursor: auto; }
+
+            /* Mobile Performance Optimizations */
+            .grain-overlay { display: none !important; }
+            .orb { filter: none !important; opacity: 0.1 !important; }
         }
